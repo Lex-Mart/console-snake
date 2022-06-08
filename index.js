@@ -16,6 +16,7 @@ const startGame = async () => {
 	game.onUpdate(async ({ status }) => {
 		if (status === STATUS_GAME_OVER) {
 			const retry = await renderer.retryQuestion()
+
 			if (retry) {
 				startGame()
 				process.stdin.setRawMode(true)
